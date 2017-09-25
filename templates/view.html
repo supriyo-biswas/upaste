@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>
+  {% if not paste.title %}
+    Untitled paste
+  {% else %}
+    {{ paste.title | truncate(50, True) }}
+  {% endif %}
+- upaste</title>
+{% endblock %}
+
+{% block content %}
+<h1>
+  {% if not paste.title %}
+    <i>Untitled paste</i>
+  {% else %}
+    {{ paste.title | truncate(60, True) }}
+  {% endif %}
+</h1>
+Created at {{ paste.time }} | <a href="/raw/{{ paste.id }}">View raw</a>
+<pre class="code-area">{{ paste.content }}</pre>
+{% endblock %}

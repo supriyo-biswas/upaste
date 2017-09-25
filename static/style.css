@@ -1,0 +1,8 @@
+textarea {
+	resize: vertical;
+	font-family: monospace !important;
+}
+
+.code-area {
+	min-height: 300px;
+}

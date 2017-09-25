@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Recent pastes - upaste</title>
+{% endblock %}
+
+{% block content %}
+<h1>Recent pastes</h1>
+{% for paste in pastes %}
+  <h3>
+    <a href="/paste/{{ paste.id }}">
+      {% if not paste.title %}
+        <i>Untitled paste</i>
+      {% else %}
+        {{ paste.title | truncate(65, True) }}
+      {% endif %}
+    </a>
+  </h3>
+  {{ paste.time }}
+{% else %}
+  <h3>Sorry, there are no pastes to view.</h3>
+{% endfor %}
+{% endblock %}
