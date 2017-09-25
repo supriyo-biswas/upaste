@@ -8,6 +8,7 @@ A tiny pastebin written using the [Flask](http://flask.pocoo.org/) framework.
 $ virtualenv -p python3 venv
 $ . venv/bin/activate
 $ pip install -r requirements.txt
+$ python setup_tables.py
 $ FLASK_APP=upaste.py flask run # For development
 $ gunicorn -w 2 -b 0.0.0.0:5000 upaste:app # For production
 ```
