@@ -17,7 +17,17 @@
     </a>
   </h3>
   {{ paste.time }}
+  <span class="label label-info">{{ paste.lang }}</span>
 {% else %}
   <h3>Sorry, there are no pastes to view.</h3>
 {% endfor %}
+
+<ul class="pager">
+  {% if num > 1 %}
+    <li class="previous"><a href="/recent/{{ num - 1 }}">Previous</a></li>
+  {% endif %}
+  {% if nextpage %}
+    <li class="next"><a href="/recent/{{ num + 1 }}">Next</a></li>
+  {% endif %}
+</ul>
 {% endblock %}

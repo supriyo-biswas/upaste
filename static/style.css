@@ -3,6 +3,10 @@ textarea {
 	font-family: monospace !important;
 }
 
-.code-area {
+textarea, .highlight>pre {
 	min-height: 300px;
+}
+
+.syntax {
+	line-height: 40px;
 }

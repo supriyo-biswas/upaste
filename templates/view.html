@@ -8,6 +8,7 @@
     {{ paste.title | truncate(50, True) }}
   {% endif %}
 - upaste</title>
+<link rel="stylesheet" href="/static/_pygments.css">
 {% endblock %}
 
 {% block content %}
@@ -19,5 +20,5 @@
   {% endif %}
 </h1>
 Created at {{ paste.time }} | <a href="/raw/{{ paste.id }}">View raw</a>
-<pre class="code-area">{{ paste.content }}</pre>
+{{ paste.content | safe }}
 {% endblock %}

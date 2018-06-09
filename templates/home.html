@@ -14,10 +14,23 @@
     <input type="text" name="title" class="form-control" placeholder="Title" value="{{ title }}">
   </div>
   <div class="form-group">
-    <textarea name="content" class="form-control code-area" placeholder="Your paste content">{{ content }}</textarea>
+    <textarea name="content" class="form-control" placeholder="Your paste content">{{ content }}</textarea>
   </div>
-  <div class="form-group">
-    <input type="submit" class="form-control btn btn-primary" value="Submit">
+  <div class="row">
+    <div class="col-sm-1 syntax">
+      Syntax:
+    </div>
+    <div class="col-sm-3 form-group">
+      <select name="lang" class="form-control">
+        <option class="_auto">Automatic</option>
+        {% for lang in langs %}
+          <option class="{{ lang }}">{{ lang }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="col-sm-offset-5 col-sm-3 form-group">
+      <input type="submit" class="form-control btn btn-primary" value="Submit">
+    </div>
   </div>
 </form>
 {% endblock %}
